@@ -38,7 +38,7 @@ class SequentialBackwardSelector:
         feature_size = X.shape[1]
         keep_features = range(feature_size)
 
-        while feature_size > self.reduced_feature_size:
+        while feature_size >= self.reduced_feature_size:
             best_feature_combination = None
             best_score = 0
 
@@ -54,7 +54,7 @@ class SequentialBackwardSelector:
 
     def _score(self, X, y, selected_feature_indexes):
         if self.use_cross_val:
-            score = cross_val_score(self.estimator, X[:, selected_feature_indexes], y).mean()
+            score = cross_val_score(self.estimator, X[:, selected_feature_indexes], y ).mean()
         else:
             self.estimator.fit(X[:, selected_feature_indexes], y)
             score = self.estimator.score(X[:, selected_feature_indexes], y)
