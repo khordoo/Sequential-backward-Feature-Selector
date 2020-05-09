@@ -1,10 +1,13 @@
 # Sequential-backward-Feature-Selector
-Python implementation of Sequential backward Feature Selection from scratch.
+Python implementation of Sequential Backward Feature Selection from scratch.
 
+The Sequential Backward Selection(SBS) algorithm has not been implemented in scikit-learn yet, so I decided to implement it in Python from scratch.
+The implemented class supports any sklean estimator.
 
-* The input to the model is the normalized X with corresponding target y variable.
-* 5-fold cross-validation was used for measuring accuracy.
-* features are removed until we reach a desired set of reduced features .
+* The input to the model is the training dataset with full set of features along with the target y variable.
+* The desired number of reduced features is set by the user 
+* 5-fold cross-validation is used for measuring accuracy during the feature removal.
+* features are removed until we reach a desired number of reduced features .
 
 The class provides a best_feature properties that keeps the index of best features during 
 each reduced feature subspace. 
@@ -62,5 +65,5 @@ As you can see the accuracy  of our KNN classifier has increased, as we reduced 
 
 From the plot we can see that 6 feature provides a good accuracy. Lets evaluate the perofmance of our classifier using our test dataset: 
 
-Test accuracy on test data set with full features : 0.9444444444444444
-Test Accuracy on test data set with reduced features (6): 0.9722222222222222
+* Test accuracy on test data set with full features : 0.9444444444444444
+* Test Accuracy on test data set with reduced features (6): 0.9722222222222222
