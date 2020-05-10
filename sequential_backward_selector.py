@@ -20,10 +20,11 @@ class SequentialBackwardSelector:
 
     def fit(self, X, y):
         """Finds a reduced set of features that results in the highest accuracy.
-        Sequentially removes the available features, evaluates the model
-        accuracy the all the possible combinations
-        of the reduced feature subspace and keeps the best(highest accuracy)
-        combination of features for each reduced feature size.
+        Sequentially removes the available features, 
+        evaluates the model using all the possible combinations
+        of the reduced feature subspace, and keeps the best
+        combination of features (one with the highest accuracy)
+        for each reduced feature size.
 
         Parameters
         ----------
